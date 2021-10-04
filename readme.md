@@ -1,6 +1,7 @@
 <h4 align="center">
+
     <a href="https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions">
-        <img src="https://raw.githubusercontent.com/ahmadawais/github-stars-contributions/master/.github/github-stars-contributions-logo.jpg" alt="github-stars-contributions" />
+        <img src="https://user-images.githubusercontent.com/960133/135864414-28d6bb95-b7ff-4691-b30a-1d69155af58a.png" alt="github-stars-contributions" />
     </a>
     <br>
     <br>
@@ -54,7 +55,10 @@ gsc
 
 ### Add Contributions
 
-Then answer the following questions to add your contribution.
+Run the cli with `gsc` command and answer the following questions to add your contribution.
+
+![ADD](https://user-images.githubusercontent.com/960133/135862046-6b9f990b-86d4-4c8a-af00-230c86691cf7.gif)
+
 
 ```sh
 Contribution: Type?
@@ -76,10 +80,17 @@ gsc remove
 # Or the complete version.
 github-stars-contributions remove
 ```
+![Remove gif](https://user-images.githubusercontent.com/960133/135863013-2fd9e9e7-851e-45e7-8d2b-889ef90cace5.gif)
+
+
 
 *Then search for the contribution, select, press enter to remove. Easy peasy!*
 
-#### BASIC USAGE
+#### HELP
+
+
+![help gif](https://user-images.githubusercontent.com/960133/135862743-69404ff3-afe9-47cc-9922-b1c15a60d2a3.gif)
+
 
 ```sh
 github-stars-contributions <command> [option]
@@ -168,3 +179,5 @@ Or you can back me by checking out my super fun video course. After building hun
 [n]: https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions
 [repo]: https://github.com/AhmadAwais/github-stars-contributions
 [t]: https://twitter.com/MrAhmadAwais/
+
+
