@@ -32,11 +32,27 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.3.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.2.0...1.3.0)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 Node Active LTS and forward Supported [`27399df`](https://github.com/ahmadawais/github-stars-contributions/commit/27399dfda8d074805b3aac917d091586bb237533) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [1.2.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.1.0...1.2.0)
 
 ![🐛 FIX:](https://img.shields.io/badge/-FIX-gray.svg?colorB=ff6347)
 
 > 🐛 Token deletion [`e88450b`](https://github.com/ahmadawais/github-stars-contributions/commit/e88450bb7f8e18197f90ed371c5cf431f6ab4bbc) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`0572675`](https://github.com/ahmadawais/github-stars-contributions/commit/05726759892278617621707df4a79fb639b12cc4) <br>
 
 <br>
 
