@@ -1,6 +1,7 @@
+<!-- https://user-images.githubusercontent.com/960133/135865365-a081b5f4-89c2-48aa-a561-1b57e083b3c7.png -->
 <h4 align="center">
     <a href="https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions">
-        <img src="https://user-images.githubusercontent.com/960133/135864414-28d6bb95-b7ff-4691-b30a-1d69155af58a.png" alt="github-stars-contributions" />
+        <img src="https://user-images.githubusercontent.com/960133/135865840-9ed76789-fe17-41d3-af1b-f901519a0ea4.png" alt="github-stars-contributions" />
 </a>
 <br>
 <br>
