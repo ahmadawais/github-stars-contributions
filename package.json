@@ -4,7 +4,8 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"bin": {
-		"github-stars-contributions": "index.js"
+		"github-stars-contributions": "index.js",
+		"gsc": "index.js"
 	},
 	"author": {
 		"name": "Ahmad Awais",
@@ -23,15 +24,23 @@
 		"format": "prettier --write \"./**/*.{js,json}\""
 	},
 	"dependencies": {
+		"await-to-js": "^3.0.0",
 		"chalk": "^4.1.2",
 		"cli-alerts": "^1.2.2",
 		"cli-handle-error": "^4.4.0",
 		"cli-handle-unhandled": "^1.1.1",
 		"cli-meow-help": "^2.0.2",
+		"cli-should-cancel": "^1.0.3",
 		"cli-welcome": "^2.2.2",
-		"meow": "^9.0.0"
+		"conf": "^10.0.3",
+		"enquirer": "^2.3.6",
+		"graphql-request": "^3.5.0",
+		"meow": "^9.0.0",
+		"open": "^8.2.1",
+		"ora": "^5.4.1"
 	},
 	"devDependencies": {
+		"graphql": "^15.6.0",
 		"prettier": "^2.4.1"
 	}
 }

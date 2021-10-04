@@ -8,11 +8,6 @@ const flags = {
 		alias: `c`,
 		desc: `Clear the console`
 	},
-	noClear: {
-		type: `boolean`,
-		default: false,
-		desc: `Don't clear the console`
-	},
 	debug: {
 		type: `boolean`,
 		default: false,
