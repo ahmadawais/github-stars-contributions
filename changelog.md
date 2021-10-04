@@ -32,6 +32,18 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.0.1](https://github.com/ahmadawais/github-stars-contributions/compare/1.0.0...1.0.1)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 Featured Img [`a9c7fa1`](https://github.com/ahmadawais/github-stars-contributions/commit/a9c7fa1e15f78e248f0d739b22bdf2ab2f34693b) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: 1.0.0
 
 ![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
@@ -52,6 +64,7 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 ![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
 
 > 📖 Documentation init [`9f7e40a`](https://github.com/ahmadawais/github-stars-contributions/commit/9f7e40a6127f6ae647dc2d98dc1ce51ee646bff2) <br>
+> 📖 Changelog [`fa664ed`](https://github.com/ahmadawais/github-stars-contributions/commit/fa664edb93bad95a7b8e527dca248d83cb1a6caf) <br>
 >  📖 Gifs & Images [`6fda78c`](https://github.com/ahmadawais/github-stars-contributions/commit/6fda78c17549d007356e5e33a657920f27006d6d) <br>
 
 <br>
