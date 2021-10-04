@@ -98,7 +98,7 @@ module.exports = async () => {
 	};
 	spinner.start(`${y(`ADDING`)} …`);
 	const data = await client.request(query, variables);
-	spinner.succeed(`${g(`ADDED`)}!`);
+	spinner.succeed(`${g(`DONE`)}!`);
 
 	alert({ type: `success`, name: `ADDED`, msg: `Contribution! ID: ${data.createContribution.id}` });
 };

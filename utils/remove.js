@@ -70,7 +70,7 @@ module.exports = async () => {
 
 	spinner.start(`${y(`DELETING`)} …`);
 	await client.request(queryDeleteContribution, variables);
-	spinner.succeed(`${g(`DELETED`)}`);
+	spinner.succeed(`${g(`DONE`)}`);
 
 	alert({ type: `success`, name: `REMOVED`, msg: `Contribution!` });
 
