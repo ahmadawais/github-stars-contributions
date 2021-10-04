@@ -1,7 +1,7 @@
 {
 	"name": "github-stars-contributions",
 	"description": "Log your GitHub Stars Contributions with the ease of a command line CLI",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"bin": {
 		"github-stars-contributions": "index.js",
