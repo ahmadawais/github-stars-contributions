@@ -2,7 +2,7 @@ const welcome = require('cli-welcome');
 const pkg = require('./../package.json');
 const unhandled = require('cli-handle-unhandled');
 
-module.exports = ({ clear = true }) => {
+module.exports = async ({ clear = true }) => {
 	unhandled();
 	welcome({
 		title: `github-stars-contributions`,
