@@ -7,6 +7,7 @@ const config = new Conf();
 const { dim } = require('chalk');
 
 module.exports = async () => {
+	config.delete('GitHubStarsContributionsToken');
 	let token = config.get('GitHubStarsContributionsToken');
 
 	if (!token) {

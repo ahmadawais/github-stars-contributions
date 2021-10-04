@@ -16,13 +16,14 @@ const checkYouTube = require('youtube-url');
 const { green: g, red: r, yellow: y, dim: d } = require('chalk');
 
 module.exports = async () => {
+	const client = await auth();
+
 	alert({
 		type: 'info',
 		name: `CONTRIBUTIONS`,
 		msg: `Help us understand the community contributions you have made over the past 12 months. This will provide a basis for your public profile, too.`
 	});
 
-	const client = await auth();
 	const type = await select({
 		message: `TYPE`,
 		choices: [
