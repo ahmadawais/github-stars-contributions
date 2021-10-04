@@ -4,7 +4,7 @@ const meowHelp = require('cli-meow-help');
 const flags = {
 	clear: {
 		type: `boolean`,
-		default: true,
+		default: false,
 		alias: `c`,
 		desc: `Clear the console`
 	},
@@ -22,7 +22,8 @@ const flags = {
 };
 
 const commands = {
-	help: { desc: `Print help info` }
+	help: { desc: `Print help info` },
+	remove: { desc: `Remove a contribution` }
 };
 
 const helpText = meowHelp({
