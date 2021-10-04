@@ -1,10 +1,9 @@
 <h4 align="center">
-
     <a href="https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions">
         <img src="https://user-images.githubusercontent.com/960133/135864414-28d6bb95-b7ff-4691-b30a-1d69155af58a.png" alt="github-stars-contributions" />
-    </a>
-    <br>
-    <br>
+</a>
+<br>
+<br>
 
 📟 CLI to log your GitHub Stars Contributions with ease. [Learn to build Node.js CLI apps][n].
 
@@ -179,5 +178,3 @@ Or you can back me by checking out my super fun video course. After building hun
 [n]: https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions
 [repo]: https://github.com/AhmadAwais/github-stars-contributions
 [t]: https://twitter.com/MrAhmadAwais/
-
-
