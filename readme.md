@@ -8,8 +8,8 @@
 
 📟 CLI to log your GitHub Stars Contributions with ease. [Learn to build Node.js CLI apps][n].
 
-<!-- [![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?label=DOWNLOADS%20%20%E2%9D%AF&colorA=6cc24a&colorB=6cc24a&style=flat)](https://www.npmjs.com/package/github-stars-contributions) -->
- [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=6cc24a&style=flat)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=6cc24a&colorB=6cc24a&style=flat)](https://twitter.com/mrahmadawais/)
+<!-- [![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?label=DOWNLOADS%20%20%E2%9D%AF&colorA=e29032&colorB=e29032&style=flat)](https://www.npmjs.com/package/github-stars-contributions) -->
+ [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=e29032&style=flat)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=e29032&colorB=e29032&style=flat)](https://twitter.com/mrahmadawais/)
 
 </h4>
 
