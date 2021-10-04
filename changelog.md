@@ -32,6 +32,18 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.2.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.1.0...1.2.0)
+
+![🐛 FIX:](https://img.shields.io/badge/-FIX-gray.svg?colorB=ff6347)
+
+> 🐛 Token deletion [`e88450b`](https://github.com/ahmadawais/github-stars-contributions/commit/e88450bb7f8e18197f90ed371c5cf431f6ab4bbc) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [1.1.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.0.2...1.1.0)
 
 ![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
@@ -39,6 +51,10 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 > 👌 Messaging order [`78df6ae`](https://github.com/ahmadawais/github-stars-contributions/commit/78df6ae4cd799b2c082440dbba15c03b51644b0d) <br>
 > 👌 Colors [`03af1ff`](https://github.com/ahmadawais/github-stars-contributions/commit/03af1ffca6b033ba472b60d3d07c184356006a60) <br>
 > 👌 Colors [`671d91a`](https://github.com/ahmadawais/github-stars-contributions/commit/671d91a271f7addfd635dddeb8c637ecd4c03662) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`b3a37e4`](https://github.com/ahmadawais/github-stars-contributions/commit/b3a37e48f7b75fecac293d8916c7c657a7dbff43) <br>
 
 <br>
 
