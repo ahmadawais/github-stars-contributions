@@ -1,18 +1,19 @@
-const { Confirm } = require('enquirer');
+const { Toggle } = require('enquirer');
 const to = require('await-to-js').default;
 const shouldCancel = require('cli-should-cancel');
 const handleError = require('cli-handle-error');
 
-module.exports = async ({ message, initial }) => {
+module.exports = async ({ message, initial = true }) => {
 	const [err, response] = await to(
-		new Confirm({
+		new Toggle({
 			message,
-			initial
+			initial,
+			format: () => ''
 		})
 			.on(`cancel`, () => shouldCancel())
 			.run()
 	);
 
-	handleError(`CONFIRM: `, err);
+	handleError(`Toggle: `, err);
 	return response;
 };

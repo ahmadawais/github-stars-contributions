@@ -17,16 +17,13 @@ module.exports = async () => {
 		});
 
 		const isConfirmed = await confirm({
-			message: 'Press enter to open GitHub and copy your token?',
-			initial: true
+			message: 'Press enter to open GitHub and copy your token?'
 		});
 
 		isConfirmed && (await open('https://stars.github.com/me/token/'));
 
 		token = await secret({
-			message: `Enter the token from ${dim(
-				`https://stars.github.com/me/token/`
-			)}`
+			message: `Enter the token from ${dim(`https://stars.github.com/me/token/`)}`
 		});
 		config.set('GitHubStarsContributionsToken', token);
 	}

@@ -34,10 +34,13 @@
 		"cli-welcome": "^2.2.2",
 		"conf": "^10.0.3",
 		"enquirer": "^2.3.6",
+		"got": "^11.8.2",
 		"graphql-request": "^3.5.0",
+		"jsdom": "^17.0.0",
 		"meow": "^9.0.0",
 		"open": "^8.2.1",
-		"ora": "^5.4.1"
+		"ora": "^5.4.1",
+		"youtube-url": "^0.5.0"
 	},
 	"devDependencies": {
 		"graphql": "^15.6.0",
