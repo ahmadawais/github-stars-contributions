@@ -32,11 +32,29 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.1.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.0.2...1.1.0)
+
+![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
+
+> 👌 Messaging order [`78df6ae`](https://github.com/ahmadawais/github-stars-contributions/commit/78df6ae4cd799b2c082440dbba15c03b51644b0d) <br>
+> 👌 Colors [`03af1ff`](https://github.com/ahmadawais/github-stars-contributions/commit/03af1ffca6b033ba472b60d3d07c184356006a60) <br>
+> 👌 Colors [`671d91a`](https://github.com/ahmadawais/github-stars-contributions/commit/671d91a271f7addfd635dddeb8c637ecd4c03662) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [1.0.2](https://github.com/ahmadawais/github-stars-contributions/compare/1.0.1...1.0.2)
 
 ![🐛 FIX:](https://img.shields.io/badge/-FIX-gray.svg?colorB=ff6347)
 
 > 🐛 Badge [`1ec9252`](https://github.com/ahmadawais/github-stars-contributions/commit/1ec92523cfa906dcda97a4083e91e725788b2695) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`1566c5e`](https://github.com/ahmadawais/github-stars-contributions/commit/1566c5eeb01c81a1f1e451fee05ae00cfa179aeb) <br>
 
 <br>
 
