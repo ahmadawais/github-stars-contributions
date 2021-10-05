@@ -32,11 +32,28 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.3.1](https://github.com/ahmadawais/github-stars-contributions/compare/1.3.0...1.3.1)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 keywords [`1440681`](https://github.com/ahmadawais/github-stars-contributions/commit/1440681f3b6fb53f64f7263f3a1c2d569113a0e7) <br>
+> 📦 npm downloads badge [`12e1243`](https://github.com/ahmadawais/github-stars-contributions/commit/12e1243a23109e68264286582b1f487d335d26ed) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [1.3.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.2.0...1.3.0)
 
 ![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
 > 📦 Node Active LTS and forward Supported [`27399df`](https://github.com/ahmadawais/github-stars-contributions/commit/27399dfda8d074805b3aac917d091586bb237533) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`71be9aa`](https://github.com/ahmadawais/github-stars-contributions/commit/71be9aa1935a9d68927d954b28481ec07b406688) <br>
 
 <br>
 
