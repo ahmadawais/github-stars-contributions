@@ -32,12 +32,28 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [2.0.0](https://github.com/ahmadawais/github-stars-contributions/compare/1.3.1...2.0.0)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 API Endpoint [`ea96e1c`](https://github.com/ahmadawais/github-stars-contributions/commit/ea96e1c3117f329240a15e3d6afb4e0d64005f71) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [1.3.1](https://github.com/ahmadawais/github-stars-contributions/compare/1.3.0...1.3.1)
 
 ![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
 > 📦 keywords [`1440681`](https://github.com/ahmadawais/github-stars-contributions/commit/1440681f3b6fb53f64f7263f3a1c2d569113a0e7) <br>
 > 📦 npm downloads badge [`12e1243`](https://github.com/ahmadawais/github-stars-contributions/commit/12e1243a23109e68264286582b1f487d335d26ed) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`8ab3bfc`](https://github.com/ahmadawais/github-stars-contributions/commit/8ab3bfcbf22b7d791ead22d6d4bf2c3f990ad469) <br>
 
 <br>
 
