@@ -29,6 +29,8 @@ Log your GitHub Stars Contributions from the command line.
 
 ```sh
 npm install -g github-stars-contributions
+# or
+npx github-stars-contributions
 ```
 
 <br>
