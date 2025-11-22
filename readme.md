@@ -9,129 +9,225 @@ Log your GitHub Stars Contributions from the command line.
 
 <br>
 
-[![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://www.npmjs.com/package/github-stars-contributions) [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @_ahmadawais on X](https://img.shields.io/badge/FOLLOW%20@_ahmadawais%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://x.com/_ahmadawais/)
+[![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?style=for-the-badge&label=Downloads&colorA=191D20&colorB=268637)](https://www.npmjs.com/package/github-stars-contributions) [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=191D20&colorB=268637)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @_ahmadawais on X](https://img.shields.io/badge/FOLLOW%20@_ahmadawais%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=191D20&colorB=268637)](https://x.com/_ahmadawais/)
 
 </h4>
 
 <br>
 
-## Features
+# CLI: github-stars-contributions `gsc`
 
-- **Interactive Mode** — Beautiful prompts with auto-complete and validation
-- **CLI Mode** — Non-interactive mode with `-x` flag for automation
-- **Smart Defaults** — Auto-fetches metadata from URLs (title, description, date)
-- **TypeScript** — Fully typed for better developer experience
-- **Tested** — 24 comprehensive tests covering all features
+> 👨‍🏫 [Awais][t] taught and created this CLI project in his [NodeCLI.com][n] automation course
+
+- 📦 Add a contribution of any type
+- 🗃️ Remove a contribution in case of a mistake
+- 🤯 Autocomplete search with type and filter function
+- 🤯 Adding YouTube? `gsc` CLI can fetch title, date, and description for you
+- 👨‍🏫 [Awais][t] taught and created this CLI project in his [NodeCLI.com][n] automation course
 
 <br>
+
+[![📟](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/install.png)][repo]
 
 ## Install
 
 ```sh
-npm install -g github-stars-contributions
-# or
+# Recommended.
 npx github-stars-contributions
+
+# OR an alternative global install.
+npm install -g github-stars-contributions
+gsc # run global alias
 ```
 
 <br>
+
+[![⚙️](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/usage.png)][repo]
 
 ## Usage
 
-### Interactive Mode (Default)
+The CLI supports both **interactive** (default) and **non-interactive** modes for automation.
+
+### Add Contributions
+
+#### 💬 Interactive Mode (Default)
+
+Run `gsc add` and answer the prompts:
+
+![ADD](https://user-images.githubusercontent.com/960133/135862046-6b9f990b-86d4-4c8a-af00-230c86691cf7.gif)
 
 ```sh
-# Add a contribution
 gsc add
-
-# Remove a contribution
-gsc remove
+# OR
+gsc a
 ```
 
-### CLI Mode (Non-Interactive)
+You'll be asked:
+- Contribution Type
+- URL (optional)
+- Title
+- Description
+- Date
+
+#### 🤖 Non-Interactive Mode (Automation)
+
+Perfect for CI/CD pipelines and scripts:
 
 ```sh
-# Add a contribution
-gsc add -x -t BLOGPOST -u https://example.com -d 2024-01-15 -T "Title" -D "Description"
+gsc add \
+  -t BLOGPOST \
+  -T "My Blog Post" \
+  -D "Description here" \
+  -d 2025-11-22 \
+  -u https://example.com \
+  -x
+```
 
-# Remove a contribution
-gsc remove -x -i contribution-id
+### Remove Contributions
+
+#### 💬 Interactive Mode (Default)
+
+Search and select contributions to remove:
+
+![Remove gif](https://user-images.githubusercontent.com/960133/135863013-2fd9e9e7-851e-45e7-8d2b-889ef90cace5.gif)
+
+```sh
+gsc remove
+# OR
+gsc r
+```
+
+*Search for the contribution, select it, and press enter to remove. Easy peasy!*
+
+#### 🤖 Non-Interactive Mode (Automation)
+
+Remove by contribution ID:
+
+```sh
+gsc remove -i <contribution-id> -x
 ```
 
 <br>
 
-## Commands
+## 📚 Command Reference
 
-### `gsc add` or `gsc a`
+![help gif](https://user-images.githubusercontent.com/960133/135862743-69404ff3-afe9-47cc-9922-b1c15a60d2a3.gif)
 
-Add a new contribution (interactive by default).
+### Basic Syntax
 
-**Options:**
-
-- `-t, --type <type>` — Contribution type (required in CLI mode)
-  - `OTHER`
-  - `FORUM`
-  - `SPEAKING`
-  - `BLOGPOST`
-  - `HACKATHON`
-  - `VIDEO_PODCAST`
-  - `ARTICLE_PUBLICATION`
-  - `EVENT_ORGANIZATION`
-  - `OPEN_SOURCE_PROJECT`
-- `-u, --url <url>` — Contribution URL (optional, auto-fetches metadata)
-- `-d, --date <date>` — Date in YYYY-MM-DD format (defaults to today)
-- `-T, --title <title>` — Contribution title (required in CLI mode)
-- `-D, --description <description>` — Description (required in CLI mode)
-- `-x, --no-interactive` — Disable interactive mode
-
-### `gsc remove` or `gsc r`
-
-Remove a contribution (interactive by default).
-
-**Options:**
-
-- `-i, --id <id>` — Contribution ID (required in CLI mode)
-- `-x, --no-interactive` — Disable interactive mode
+```sh
+github-stars-contributions <command> [options]
+# OR
+gsc <command> [options]
+```
 
 ### Global Options
 
-- `-v, --version` — Show version
-- `-h, --help` — Show help
+| Option | Description |
+|--------|-------------|
+| `-v, --version` | Output the version number |
+| `-h, --help` | Display help for command |
 
-<br>
+### Commands
 
-## Examples
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `add [options]` | `a` | Add a new contribution (interactive by default) |
+| `remove [options]` | `r` | Remove a contribution (interactive by default) |
+| `help [command]` | - | Display help for command |
 
-**Add a blog post:**
+---
+
+### `add` Command
+
+Add a new contribution to your GitHub Stars profile.
+
+**Usage:**
 ```sh
-gsc add -x -t BLOGPOST -u "https://awais.dev/my-post" -d "2024-01-15" -T "Building Better CLIs" -D "A guide to creating amazing command-line tools"
+gsc add [options]
+gsc a [options]
 ```
 
-**Add a speaking engagement:**
-```sh
-gsc add -x -t SPEAKING -u "https://conference.com/talk" -d "2024-06-13" -T "AI Primitives over Frameworks" -D "Why composable primitives beat monolithic frameworks"
-```
+**Options:**
 
-**Interactive mode with auto-fetch:**
+| Option | Description | Required |
+|--------|-------------|----------|
+| `-t, --type <type>` | Contribution type (see types below) | Yes (non-interactive) |
+| `-T, --title <title>` | Contribution title | Yes (non-interactive) |
+| `-D, --description <description>` | Contribution description | Yes (non-interactive) |
+| `-d, --date <date>` | Date in YYYY-MM-DD format (default: today) | Yes (non-interactive) |
+| `-u, --url <url>` | Contribution URL | No |
+| `-x, --no-interactive` | Disable interactive mode | No |
+| `-h, --help` | Display help | No |
+
+**Contribution Types:**
+- `OTHER`
+- `FORUM`
+- `SPEAKING`
+- `BLOGPOST`
+- `HACKATHON`
+- `VIDEO_PODCAST`
+- `ARTICLE_PUBLICATION`
+- `EVENT_ORGANIZATION`
+- `OPEN_SOURCE_PROJECT`
+
+**Examples:**
+
 ```sh
+# Interactive mode (default)
 gsc add
-# Paste a YouTube URL and watch it auto-fill title, description, and date
+
+# Non-interactive mode with all options
+gsc add \
+  -t BLOGPOST \
+  -T "My Blog Post" \
+  -D "Description here" \
+  -d 2025-11-22 \
+  -u https://example.com \
+  -x
+
+# Non-interactive without URL
+gsc add -t SPEAKING -T "Conference Talk" -D "Talked about Node.js" -d 2025-11-20 -x
 ```
 
-**Remove a contribution:**
+---
+
+### `remove` Command
+
+Remove a contribution from your GitHub Stars profile.
+
+**Usage:**
 ```sh
-gsc remove -x -i cmi9bx8pg0009qk012t44af1n
+gsc remove [options]
+gsc r [options]
 ```
 
+**Options:**
+
+| Option | Description | Required |
+|--------|-------------|----------|
+| `-i, --id <id>` | Contribution ID to remove | Yes (non-interactive) |
+| `-x, --no-interactive` | Disable interactive mode | No |
+| `-h, --help` | Display help | No |
+
+**Examples:**
+
+```sh
+# Interactive mode (default) - search and select
+gsc remove
+
+# Non-interactive mode with ID
+gsc remove -i abc123 -x
+```
 
 <br>
 
 [![📝](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/log.png)](changelog.md)
 
+
 ## Changelog
 
 [❯ Read the changelog here →](changelog.md)
-
-<br>
 
 <small>**KEY**: `📦 NEW`, `👌 IMPROVE`, `🐛 FIX`, `📖 DOC`, `🚀 RELEASE`, and `🤖 TEST`
 
@@ -143,6 +239,7 @@ gsc remove -x -i cmi9bx8pg0009qk012t44af1n
 
 [![📃](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/license.png)][repo]
 
+
 ## License & Conduct
 
 - Thanks to the GitHub team for an awesome GraphQL API.
@@ -153,14 +250,17 @@ gsc remove -x -i cmi9bx8pg0009qk012t44af1n
 
 [![🙌](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/connect.png)][repo]
 
+
 ## Connect
 
 <div align="left">
-    <p><a href="https://github.com/ahmadawais"><img alt="GitHub @AhmadAwais" align="center" src="https://img.shields.io/badge/GITHUB-gray.svg?colorB=6cc644&style=flat" /></a>&nbsp;<small><strong>(follow)</strong> To stay up to date on free & open-source software</small></p>
-    <p><a href="https://twitter.com/_AhmadAwais/"><img alt="Twitter @_AhmadAwais" align="center" src="https://img.shields.io/badge/TWITTER-gray.svg?colorB=1da1f2&style=flat" /></a>&nbsp;<small><strong>(follow)</strong> To get #OneDevMinute daily hot tips & trolls</small></p>
-    <p><a href="https://www.youtube.com/AhmadAwais"><img alt="YouTube AhmadAwais" align="center" src="https://img.shields.io/badge/YOUTUBE-gray.svg?colorB=ff0000&style=flat" /></a>&nbsp;<small><strong>(subscribe)</strong> To tech talks & #OneDevMinute videos</small></p>
-    <p><a href="https://AhmadAwais.com/"><img alt="Blog: AhmadAwais.com" align="center" src="https://img.shields.io/badge/MY%20BLOG-gray.svg?colorB=4D2AFF&style=flat" /></a>&nbsp;<small><strong>(read)</strong> In-depth & long form technical articles</small></p>
-    <p><a href="https://www.linkedin.com/in/_AhmadAwais/"><img alt="LinkedIn @_AhmadAwais" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorB=0077b5&style=flat" /></a>&nbsp;<small><strong>(connect)</strong> On the LinkedIn profile y'all</small></p>
+    <p><a href="https://github.com/ahmadawais"><img alt="GitHub @AhmadAwais" align="center" src="https://img.shields.io/badge/GITHUB-gray.svg?colorB=191D20&style=for-the-badge" /></a>&nbsp;<small><strong>(follow)</strong> To stay up to date on free & open-source software</small></p>
+    <p><a href="https://twitter.com/_AhmadAwais/"><img alt="Twitter @_AhmadAwais" align="center" src="https://img.shields.io/badge/X/TWITTER-gray.svg?colorB=191D20&style=for-the-badge" /></a>&nbsp;<small><strong>(follow)</strong> To get #OneDevMinute daily hot tips & trolls</small></p>
+    <p><a href="https://www.youtube.com/AhmadAwais"><img alt="YouTube AhmadAwais" align="center" src="https://img.shields.io/badge/YOUTUBE-gray.svg?colorB=191D20&style=for-the-badge" /></a>&nbsp;<small><strong>(subscribe)</strong> To tech talks & #OneDevMinute videos</small></p>
+    <p><a href="https://AhmadAwais.com/"><img alt="Blog: AhmadAwais.com" align="center" src="https://img.shields.io/badge/MY%20BLOG-gray.svg?colorB=191D20&style=for-the-badge" /></a>&nbsp;<small><strong>(read)</strong> In-depth & long form technical articles</small></p>
+    <p><a href="https://www.linkedin.com/in/_AhmadAwais/"><img alt="LinkedIn @_AhmadAwais" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorB=191D20&style=for-the-badge" /></a>&nbsp;<small><strong>(connect)</strong> On the LinkedIn profile y'all</small></p>
 </div>
 
 [repo]: https://github.com/AhmadAwais/github-stars-contributions
+[t]: https://twitter.com/_AhmadAwais/
+[n]: https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions
