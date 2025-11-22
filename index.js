@@ -4,7 +4,7 @@
  * github-stars-contributions
  * Log your GitHub Stars Contributions with the ease of a command line CLI
  *
- * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
+ * @author Ahmad Awais <https://twitter.com/_AhmadAwais/>
  */
 const checkNode = require('cli-check-node');
 checkNode('14');

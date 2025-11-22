@@ -1,0 +1,13 @@
+src/
+.git/
+.github/
+node_modules/
+coverage/
+*.log
+.DS_Store
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.prettierrc.json
+.gitignore
+pnpm-lock.yaml

@@ -1,0 +1,15 @@
+# Cli
+- Use pnpm as the package manager for CLI projects. Confidence: 0.95
+- Use TypeScript for CLI projects. Confidence: 0.95
+- Use tsup as the build tool for CLI projects. Confidence: 0.95
+- Use vitest for testing CLI projects. Confidence: 0.95
+- Use commander for CLI command handling. Confidence: 0.95
+- Use clack for interactive user input in CLI projects. Confidence: 0.95
+- Use npm link to test CLI tools locally. Confidence: 0.95
+- Check for existing CLI name conflicts before running npm link. Confidence: 0.95
+- Organize CLI commands in a dedicated commands folder with each module separated. Confidence: 0.95
+- Include a small 150px ASCII art welcome banner displaying the CLI name. Confidence: 0.95
+- Use lowercase flags for version and help commands (-v, --version, -h, --help). Confidence: 0.85
+- Start projects with version 0.0.1 instead of 1.0.0. Confidence: 0.85
+- Version command should output only the version number with no ASCII art, banner, or additional information. Confidence: 0.90
+- Read CLI version from package.json instead of hardcoding it in the source code. Confidence: 0.75

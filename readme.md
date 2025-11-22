@@ -1,4 +1,3 @@
-<!-- https://user-images.githubusercontent.com/960133/135865365-a081b5f4-89c2-48aa-a561-1b57e083b3c7.png -->
 <h4 align="center">
     <a href="https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions">
         <img src="https://user-images.githubusercontent.com/960133/135865840-9ed76789-fe17-41d3-af1b-f901519a0ea4.png" alt="github-stars-contributions" />
@@ -6,113 +5,121 @@
 <br>
 <br>
 
-📟 CLI to log your GitHub Stars Contributions with ease. [Learn to build Node.js CLI apps][n].
+Log your GitHub Stars Contributions from the command line.
 
-[![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?label=DOWNLOADS%20%20%E2%9D%AF&colorA=35a236&colorB=35a236&style=flat)](https://www.npmjs.com/package/github-stars-contributions) [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=35a236&style=flat)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=35a236&colorB=35a236&style=flat)](https://twitter.com/mrahmadawais/)
+<br>
+
+[![DOWNLOADS](https://img.shields.io/npm/dt/github-stars-contributions?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://www.npmjs.com/package/github-stars-contributions) [![Learn Node.js CLI Automation](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://nodecli.com/?utm_source=GitHubFOSS) [![Follow @_ahmadawais on X](https://img.shields.io/badge/FOLLOW%20@_ahmadawais%20%E2%86%92-gray.svg?style=for-the-badge&label=Downloads&colorA=2D2A56&colorB=4D2AFF)](https://x.com/_ahmadawais/)
 
 </h4>
 
 <br>
 
-# CLI: github-stars-contributions `gsc`
+## Features
 
-- 📦 Add a contribution of any type
-- 🗃️ Remove a contribution in case of a mistake
-- 🤯 Autocomplete search with type and filter function
-- 🤯 Adding YouTube? `gsc` CLI can fetch title, date, and description for you
-- 👨‍🏫 [Awais][t] taught and created this CLI project in his [NodeCLI.com][n] automation course
+- **Interactive Mode** — Beautiful prompts with auto-complete and validation
+- **CLI Mode** — Non-interactive mode with `-x` flag for automation
+- **Smart Defaults** — Auto-fetches metadata from URLs (title, description, date)
+- **TypeScript** — Fully typed for better developer experience
+- **Tested** — 24 comprehensive tests covering all features
 
 <br>
-
-[![📟](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/install.png)][repo]
 
 ## Install
 
 ```sh
-# Recommended.
-npx github-stars-contributions
-
-# OR an alternative global install.
 npm install -g github-stars-contributions
 ```
 
 <br>
 
-[![⚙️](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/usage.png)][repo]
-
 ## Usage
 
-1. Run the CLI using
+### Interactive Mode (Default)
 
 ```sh
-npx github-stars-contributions
+# Add a contribution
+gsc add
 
-# OR for global install.
-github-stars-contributions
-# OR use the alias for global install.
-gsc
-```
-
-### Add Contributions
-
-Run the cli with `gsc` command and answer the following questions to add your contribution.
-
-![ADD](https://user-images.githubusercontent.com/960133/135862046-6b9f990b-86d4-4c8a-af00-230c86691cf7.gif)
-
-
-```sh
-Contribution: Type?
-Contribution: URL?
-Contribution: Title?
-Contribution: Description?
-Contribution: Date?
-```
-
-### Remove Contributions
-
-Run the CLI with remove input command.
-
-```sh
-# With gsc alias.
+# Remove a contribution
 gsc remove
-
-
-# Or the complete version.
-github-stars-contributions remove
 ```
-![Remove gif](https://user-images.githubusercontent.com/960133/135863013-2fd9e9e7-851e-45e7-8d2b-889ef90cace5.gif)
 
-
-
-*Then search for the contribution, select, press enter to remove. Easy peasy!*
-
-#### HELP
-
-
-![help gif](https://user-images.githubusercontent.com/960133/135862743-69404ff3-afe9-47cc-9922-b1c15a60d2a3.gif)
-
+### CLI Mode (Non-Interactive)
 
 ```sh
-github-stars-contributions <command> [option]
-# OR
-gsc <command> [option]
+# Add a contribution
+gsc add -x -t BLOGPOST -u https://example.com -d 2024-01-15 -T "Title" -D "Description"
+
+# Remove a contribution
+gsc remove -x -i contribution-id
 ```
 
-#### COMMANDS
+<br>
 
+## Commands
+
+### `gsc add` or `gsc a`
+
+Add a new contribution (interactive by default).
+
+**Options:**
+
+- `-t, --type <type>` — Contribution type (required in CLI mode)
+  - `OTHER`
+  - `FORUM`
+  - `SPEAKING`
+  - `BLOGPOST`
+  - `HACKATHON`
+  - `VIDEO_PODCAST`
+  - `ARTICLE_PUBLICATION`
+  - `EVENT_ORGANIZATION`
+  - `OPEN_SOURCE_PROJECT`
+- `-u, --url <url>` — Contribution URL (optional, auto-fetches metadata)
+- `-d, --date <date>` — Date in YYYY-MM-DD format (defaults to today)
+- `-T, --title <title>` — Contribution title (required in CLI mode)
+- `-D, --description <description>` — Description (required in CLI mode)
+- `-x, --no-interactive` — Disable interactive mode
+
+### `gsc remove` or `gsc r`
+
+Remove a contribution (interactive by default).
+
+**Options:**
+
+- `-i, --id <id>` — Contribution ID (required in CLI mode)
+- `-x, --no-interactive` — Disable interactive mode
+
+### Global Options
+
+- `-v, --version` — Show version
+- `-h, --help` — Show help
+
+<br>
+
+## Examples
+
+**Add a blog post:**
 ```sh
-help  Print help info
-remove  Remove a contribution
-
+gsc add -x -t BLOGPOST -u "https://awais.dev/my-post" -d "2024-01-15" -T "Building Better CLIs" -D "A guide to creating amazing command-line tools"
 ```
 
-#### OPTIONS
-
+**Add a speaking engagement:**
 ```sh
--c, --clear    Clear the console Default: false
--d, --debug    Print debug info Default: false
--v, --version  Print CLI version Default: false
+gsc add -x -t SPEAKING -u "https://conference.com/talk" -d "2024-06-13" -T "AI Primitives over Frameworks" -D "Why composable primitives beat monolithic frameworks"
 ```
+
+**Interactive mode with auto-fetch:**
+```sh
+gsc add
+# Paste a YouTube URL and watch it auto-fill title, description, and date
+```
+
+**Remove a contribution:**
+```sh
+gsc remove -x -i cmi9bx8pg0009qk012t44af1n
+```
+
 
 <br>
 
@@ -154,28 +161,4 @@ remove  Remove a contribution
     <p><a href="https://www.linkedin.com/in/MrAhmadAwais/"><img alt="LinkedIn @MrAhmadAwais" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorB=0077b5&style=flat" /></a>&nbsp;<small><strong>(connect)</strong> On the LinkedIn profile y'all</small></p>
 </div>
 
-<br>
-
-[![👌](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/sponsor.png)][repo]
-
-## Sponsor
-
-Me ([Ahmad Awais](https://twitter.com/mrahmadawais/)) and my incredible wife ([Maedah Batool](https://twitter.com/MaedahBatool/)) are two engineers who fell in love with open source and then with each other. You can read more [about me here](https://ahmadawais.com/about). If you or your company use any of my projects or like what I’m doing then consider backing me. I'm in this for the long run. An open-source developer advocate.
-
-[![Support Open-Source Work](https://raw.githubusercontent.com/ahmadawais/stuff/master/sponsor/sponsor.jpg)](https://github.com/AhmadAwais/sponsor)
-
-<br>
-
-### [How to build a Node CLI?][n]
-
-Or you can back me by checking out my super fun video course. After building hundreds of developer automation tools used by millions of developers, I am teaching exactly how you can do it yourself with minimum effective effort. Learn to build Node.js & JavaScript based CLI (Command Line Interface) apps & npm packages. Automate the grunt work, do more in less time, impress your manager, make more salary, and help the community. I'm sharing it all in this step-by-step 100-videos course. [Node CLI Automation without wasting a thousand hours][n] →
-
-[![NodeCLI.com](https://raw.githubusercontent.com/ahmadawais/stuff/master/nodecli/featured.jpg)][n]
-
-[![Node CLI](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=488640&style=flat)](https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions)
-
-[![Ahmad on Twitter](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Follow%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/)
-
-[n]: https://nodecli.com/?utm_source=FOSS&utm_medium=FOSS&utm_campaign=github-stars-contributions
 [repo]: https://github.com/AhmadAwais/github-stars-contributions
-[t]: https://twitter.com/MrAhmadAwais/
