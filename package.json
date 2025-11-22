@@ -5,8 +5,8 @@
 	"license": "MIT",
 	"type": "module",
 	"bin": {
-		"github-stars-contributions": "./dist/index.js",
-		"gsc": "./dist/index.js"
+		"github-stars-contributions": "dist/index.js",
+		"gsc": "dist/index.js"
 	},
 	"author": {
 		"name": "Ahmad Awais",
