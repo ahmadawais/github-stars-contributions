@@ -109,7 +109,9 @@ gsc remove -i <contribution-id> -x
 
 <br>
 
-## 📚 Command Reference
+[![⚙️](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/usage.png)][repo]
+
+## Command Reference
 
 ![help gif](https://user-images.githubusercontent.com/960133/135862743-69404ff3-afe9-47cc-9922-b1c15a60d2a3.gif)
 
