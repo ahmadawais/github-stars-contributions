@@ -210,7 +210,7 @@ describe('add command', () => {
 		expect(clack.text).toHaveBeenCalled();
 	});
 
-	it('should show the first two paragraphs of a long description and prefill the first line', async () => {
+	it('should show only the first paragraph of a long description and prefill it', async () => {
 		const { fetchMetadata } = await import('../../utils/fetch-metadata.js');
 		vi.mocked(fetchMetadata).mockResolvedValue({
 			title: 'Test Title',
@@ -231,12 +231,9 @@ describe('add command', () => {
 
 		await add(options);
 
-		expect(noteSpy).toHaveBeenCalledWith(
-			expect.stringContaining('Second paragraph'),
-			'Description preview'
-		);
+		expect(noteSpy).toHaveBeenCalledWith('First paragraph', 'Description preview');
 		expect(noteSpy).not.toHaveBeenCalledWith(
-			expect.stringContaining('Third paragraph'),
+			expect.stringContaining('Second paragraph'),
 			'Description preview'
 		);
 		expect(clack.text).toHaveBeenCalledWith(
