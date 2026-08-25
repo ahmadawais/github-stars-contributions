@@ -158,7 +158,11 @@ export const add = async (options: AddOptions) => {
 
 	const spinner = ora('Adding contribution...').start();
 
-	if (options.legacyGraphQL) {
+	// The GraphQL API was removed on September 1, 2026. If the flag is somehow
+	// still passed after the sunset, fall back to the REST API.
+	const legacyGraphQLAvailable = new Date() < new Date('2026-09-01T00:00:00Z');
+
+	if (options.legacyGraphQL && legacyGraphQLAvailable) {
 		const client = await legacyGraphQLClient();
 
 		const query = gql`

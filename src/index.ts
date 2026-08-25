@@ -14,13 +14,16 @@ const packageJson = JSON.parse(
 
 const program = new Command();
 
+const LEGACY_GRAPHQL_SUNSET = new Date('2026-09-01T00:00:00Z');
+const legacyGraphQLAvailable = new Date() < LEGACY_GRAPHQL_SUNSET;
+
 program
 	.name('github-stars-contributions')
 	.description('Log your GitHub Stars Contributions with the ease of a command line CLI')
 	.version(packageJson.version, '-v, --version', 'output the version number')
 	.helpOption('-h, --help', 'display help for command');
 
-program
+const addCommand = program
 	.command('add')
 	.alias('a')
 	.description('Add a new contribution (interactive by default)')
@@ -29,8 +32,16 @@ program
 	.option('-d, --date <date>', 'contribution date (YYYY-MM-DD)', new Date().toISOString().split('T')[0])
 	.option('-T, --title <title>', 'contribution title (required in non-interactive mode)')
 	.option('-D, --description <description>', 'contribution description (required in non-interactive mode)')
-	.option('-c, --client-id <client-id>', 'stable client ID for idempotent PUT (letters, numbers, periods, underscores, hyphens, or colons)')
-	.option('-L, --legacy-graphql', 'use the deprecated GraphQL API instead of the REST API (removed September 1, 2026)')
+	.option('-c, --client-id <client-id>', 'stable client ID for idempotent PUT (letters, numbers, periods, underscores, hyphens, or colons)');
+
+if (legacyGraphQLAvailable) {
+	addCommand.option(
+		'-L, --legacy-graphql',
+		'use the deprecated GraphQL API instead of the REST API (removed September 1, 2026)'
+	);
+}
+
+addCommand
 	.option('-x, --no-interactive', 'disable interactive mode (requires -t, -d, -T, -D)')
 	.action(async (options) => {
 		const { add } = await import('./commands/add.js');
