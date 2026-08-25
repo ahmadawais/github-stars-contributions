@@ -4,7 +4,6 @@ import { Command } from 'commander';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { banner } from './utils/banner.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -59,8 +58,9 @@ program
 	});
 
 if (process.argv.length === 2) {
-	banner();
-	program.help();
+	// No command given — jump straight into the interactive add flow.
+	const { add } = await import('./commands/add.js');
+	await add({ interactive: true });
+} else {
+	program.parse();
 }
-
-program.parse();

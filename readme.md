@@ -54,7 +54,7 @@ The CLI supports both **interactive** (default) and **non-interactive** modes fo
 
 #### 💬 Interactive Mode (Default)
 
-Run `gsc add` and answer the prompts:
+Run `gsc add` (or just `gsc`) and answer the prompts:
 
 ![ADD](https://user-images.githubusercontent.com/960133/135862046-6b9f990b-86d4-4c8a-af00-230c86691cf7.gif)
 
@@ -62,6 +62,8 @@ Run `gsc add` and answer the prompts:
 gsc add
 # OR
 gsc a
+# OR run with no command — jumps straight into add
+gsc
 ```
 
 You'll be asked:
