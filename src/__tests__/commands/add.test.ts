@@ -1,10 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { add } from '../../commands/add.js';
-import { mockGraphQLClient, mockConfig } from '../setup.js';
+import { mockContributionsApi, mockGraphQLClient, mockConfig } from '../setup.js';
 import * as clack from '@clack/prompts';
 
-vi.mock('../../utils/auth.js', () => ({
-	auth: vi.fn(async () => mockGraphQLClient)
+vi.mock('../../utils/client.js', () => ({
+	restClient: vi.fn(async () => mockContributionsApi),
+	legacyGraphQLClient: vi.fn(async () => mockGraphQLClient)
 }));
 
 vi.mock('../../utils/token.js', () => ({
@@ -27,6 +28,9 @@ describe('add command', () => {
 	beforeEach(() => {
 		vi.clearAllMocks();
 		mockConfig.get.mockReturnValue('mock-token');
+		mockContributionsApi.request.mockResolvedValue({
+			data: [{ id: 'test-id-123', title: 'Test Contribution' }]
+		});
 		mockGraphQLClient.request.mockResolvedValue({
 			createContribution: {
 				id: 'test-id-123',
@@ -47,16 +51,84 @@ describe('add command', () => {
 
 		await add(options);
 
+		expect(mockContributionsApi.request).toHaveBeenCalledWith(
+			'',
+			expect.objectContaining({
+				method: 'POST',
+				body: expect.stringContaining('BLOGPOST')
+			})
+		);
+	});
+
+	it('should use PUT with a stable client ID', async () => {
+		const options = {
+			type: 'SPEAKING',
+			url: 'https://example.com',
+			date: '2024-01-15',
+			title: 'Talk',
+			description: 'Talk description',
+			clientId: 'my-talk',
+			interactive: false
+		};
+
+		await add(options);
+
+		expect(mockContributionsApi.request).toHaveBeenCalledWith(
+			'/my-talk',
+			expect.objectContaining({
+				method: 'PUT',
+				body: expect.stringContaining('SPEAKING')
+			})
+		);
+	});
+
+	it('should reject invalid client IDs in CLI mode', async () => {
+		const options = {
+			type: 'SPEAKING',
+			title: 'Talk',
+			description: 'Talk description',
+			date: '2024-01-15',
+			clientId: 'bad id!',
+			interactive: false
+		};
+
+		const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+		const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
+			throw new Error('process.exit');
+		});
+
+		await expect(add(options)).rejects.toThrow('process.exit');
+		expect(consoleErrorSpy).toHaveBeenCalledWith(
+			expect.stringContaining('--client-id')
+		);
+		expect(processExitSpy).toHaveBeenCalledWith(1);
+
+		consoleErrorSpy.mockRestore();
+		processExitSpy.mockRestore();
+	});
+
+	it('should use the legacy GraphQL API when the legacy flag is set', async () => {
+		const options = {
+			type: 'BLOGPOST',
+			date: '2024-01-15',
+			title: 'Test Post',
+			description: 'Test Description',
+			legacyGraphQL: true,
+			interactive: false
+		};
+
+		await add(options);
+
 		expect(mockGraphQLClient.request).toHaveBeenCalledWith(
 			expect.any(String),
 			expect.objectContaining({
 				type: 'BLOGPOST',
 				title: 'Test Post',
 				description: 'Test Description',
-				url: 'https://example.com',
 				date: expect.any(String)
 			})
 		);
+		expect(mockContributionsApi.request).not.toHaveBeenCalled();
 	});
 
 	it('should require all fields in CLI mode', async () => {

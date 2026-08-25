@@ -20,7 +20,7 @@ Log your GitHub Stars Contributions from the command line.
 > 👨‍🏫 [Awais][t] taught and created this CLI project in his [NodeCLI.com][n] automation course
 
 - 📦 Add a contribution of any type
-- 🗃️ Remove a contribution in case of a mistake
+- 🗃️ List your contributions
 - 🤯 Autocomplete search with type and filter function
 - 🤯 Adding YouTube? `gsc` CLI can fetch title, date, and description for you
 - 👨‍🏫 [Awais][t] taught and created this CLI project in his [NodeCLI.com][n] automation course
@@ -47,6 +47,8 @@ gsc # run global alias
 ## Usage
 
 The CLI supports both **interactive** (default) and **non-interactive** modes for automation.
+
+> **Note:** The GraphQL contributions API is deprecated and will be removed on September 1, 2026. This CLI now uses the new [REST contributions API](https://stars.github.com/me/token/) by default. A `--legacy-graphql` flag is available on `gsc add` for migration until then.
 
 ### Add Contributions
 
@@ -83,28 +85,22 @@ gsc add \
   -x
 ```
 
-### Remove Contributions
+### List Contributions
 
 #### 💬 Interactive Mode (Default)
 
-Search and select contributions to remove:
-
-![Remove gif](https://user-images.githubusercontent.com/960133/135863013-2fd9e9e7-851e-45e7-8d2b-889ef90cace5.gif)
+Show all your contributions:
 
 ```sh
-gsc remove
+gsc list
 # OR
-gsc r
+gsc l
 ```
-
-*Search for the contribution, select it, and press enter to remove. Easy peasy!*
 
 #### 🤖 Non-Interactive Mode (Automation)
 
-Remove by contribution ID:
-
 ```sh
-gsc remove -i <contribution-id> -x
+gsc list -x
 ```
 
 <br>
@@ -135,7 +131,7 @@ gsc <command> [options]
 | Command | Alias | Description |
 |---------|-------|-------------|
 | `add [options]` | `a` | Add a new contribution (interactive by default) |
-| `remove [options]` | `r` | Remove a contribution (interactive by default) |
+| `list [options]` | `l` | List your contributions (interactive by default) |
 | `help [command]` | - | Display help for command |
 
 ---
@@ -159,6 +155,8 @@ gsc a [options]
 | `-D, --description <description>` | Contribution description | Yes (non-interactive) |
 | `-d, --date <date>` | Date in YYYY-MM-DD format (default: today) | Yes (non-interactive) |
 | `-u, --url <url>` | Contribution URL | No |
+| `-c, --client-id <client-id>` | Stable client ID for idempotent PUT updates (letters, numbers, periods, underscores, hyphens, or colons) | No |
+| `-L, --legacy-graphql` | Use the deprecated GraphQL API (removed September 1, 2026) | No |
 | `-x, --no-interactive` | Disable interactive mode | No |
 | `-h, --help` | Display help | No |
 
@@ -190,36 +188,38 @@ gsc add \
 
 # Non-interactive without URL
 gsc add -t SPEAKING -T "Conference Talk" -D "Talked about Node.js" -d 2025-11-20 -x
+
+# Idempotent add/update with a stable client ID
+gsc add -t BLOGPOST -T "My Blog Post" -D "Description here" -d 2025-11-22 -c my-blog-post -x
 ```
 
 ---
 
-### `remove` Command
+### `list` Command
 
-Remove a contribution from your GitHub Stars profile.
+List your contributions from your GitHub Stars profile.
 
 **Usage:**
 ```sh
-gsc remove [options]
-gsc r [options]
+gsc list [options]
+gsc l [options]
 ```
 
 **Options:**
 
 | Option | Description | Required |
 |--------|-------------|----------|
-| `-i, --id <id>` | Contribution ID to remove | Yes (non-interactive) |
 | `-x, --no-interactive` | Disable interactive mode | No |
 | `-h, --help` | Display help | No |
 
 **Examples:**
 
 ```sh
-# Interactive mode (default) - search and select
-gsc remove
+# Interactive mode (default)
+gsc list
 
-# Non-interactive mode with ID
-gsc remove -i abc123 -x
+# Non-interactive mode
+gsc list -x
 ```
 
 <br>
@@ -244,7 +244,7 @@ gsc remove -i abc123 -x
 
 ## License & Conduct
 
-- Thanks to the GitHub team for an awesome GraphQL API.
+- Thanks to the GitHub team for the awesome contributions API.
 - MIT © [Ahmad Awais](https://twitter.com/_AhmadAwais/).
 - [Code of Conduct](code-of-conduct.md).
 
