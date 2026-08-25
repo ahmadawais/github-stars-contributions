@@ -88,6 +88,28 @@ describe('fetchMetadata utility', () => {
 		expect(metadata.description).toBe('full long description');
 	});
 
+	it('should extract the full description even when JSON contains }; inside strings', async () => {
+		const mockHTML = `
+			<html>
+				<head>
+					<title>YouTube Video</title>
+					<meta name="description" content="short">
+				</head>
+				<body>
+					<script>var ytInitialPlayerResponse = {"videoDetails": {"shortDescription": "line one }; line two"}};</script>
+				</body>
+			</html>
+		`;
+
+		(global.fetch as any).mockResolvedValue({
+			text: async () => mockHTML
+		});
+
+		const metadata = await fetchMetadata('https://youtube.com/watch?v=test');
+
+		expect(metadata.description).toBe('line one }; line two');
+	});
+
 	it('should handle fetch errors gracefully', async () => {
 		(global.fetch as any).mockRejectedValue(new Error('Network error'));
 
