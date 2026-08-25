@@ -107,13 +107,20 @@ export const add = async (options: AddOptions) => {
 
 		title = titleInput as string;
 
-		if (metadata.description) {
-			clack.note(metadata.description, 'Full description');
+		// Keep the description short and prompt-friendly: the text input is
+		// single-line, so only the first two paragraphs are used.
+		const descriptionPreview = metadata.description
+			.split(/\n\s*\n/)
+			.slice(0, 2)
+			.join('\n\n');
+
+		if (descriptionPreview) {
+			clack.note(descriptionPreview, 'Description preview');
 		}
 
 		const descriptionInput = await clack.text({
 			message: 'Enter description',
-			initialValue: metadata.description.split('\n')[0],
+			initialValue: descriptionPreview.split('\n')[0],
 			validate: (value) => {
 				if (!value) return 'Description is required';
 			}

@@ -210,11 +210,11 @@ describe('add command', () => {
 		expect(clack.text).toHaveBeenCalled();
 	});
 
-	it('should show the full multiline description as a note and prefill only the first line', async () => {
+	it('should show the first two paragraphs of a long description and prefill the first line', async () => {
 		const { fetchMetadata } = await import('../../utils/fetch-metadata.js');
 		vi.mocked(fetchMetadata).mockResolvedValue({
 			title: 'Test Title',
-			description: 'First line\nfull description body\nmore lines',
+			description: 'First paragraph\n\nSecond paragraph\n\nThird paragraph\n\nFourth paragraph',
 			date: '2024-01-15'
 		});
 
@@ -223,7 +223,7 @@ describe('add command', () => {
 			.mockResolvedValueOnce('https://youtu.be/laEzOCgtK6c')
 			.mockResolvedValueOnce('2024-01-15')
 			.mockResolvedValueOnce('Title')
-			.mockResolvedValueOnce('First line');
+			.mockResolvedValueOnce('First paragraph');
 		vi.spyOn(clack, 'confirm').mockResolvedValue(true);
 		const noteSpy = vi.spyOn(clack, 'note').mockImplementation(() => {});
 
@@ -232,11 +232,15 @@ describe('add command', () => {
 		await add(options);
 
 		expect(noteSpy).toHaveBeenCalledWith(
-			expect.stringContaining('full description body'),
-			'Full description'
+			expect.stringContaining('Second paragraph'),
+			'Description preview'
+		);
+		expect(noteSpy).not.toHaveBeenCalledWith(
+			expect.stringContaining('Third paragraph'),
+			'Description preview'
 		);
 		expect(clack.text).toHaveBeenCalledWith(
-			expect.objectContaining({ initialValue: 'First line' })
+			expect.objectContaining({ initialValue: 'First paragraph' })
 		);
 	});
 
