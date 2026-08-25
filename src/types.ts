@@ -24,10 +24,7 @@ export interface AddOptions {
 	date?: string;
 	title?: string;
 	description?: string;
-	interactive?: boolean;
-}
-
-export interface RemoveOptions {
-	id?: string;
+	clientId?: string;
+	legacyGraphQL?: boolean;
 	interactive?: boolean;
 }

@@ -8,5 +8,6 @@ export default defineConfig({
 	sourcemap: true,
 	clean: true,
 	shims: true,
-	target: 'node14'
+	target: 'node18',
+	external: ['graphql-request']
 });

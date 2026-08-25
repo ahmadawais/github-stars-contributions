@@ -9,6 +9,10 @@ export const mockConfig = {
 	set: vi.fn()
 };
 
+export const mockContributionsApi = {
+	request: vi.fn()
+};
+
 vi.mock('graphql-request', () => ({
 	GraphQLClient: vi.fn(() => mockGraphQLClient),
 	gql: (strings: TemplateStringsArray) => strings[0]
@@ -26,7 +30,8 @@ vi.mock('ora', () => ({
 	default: vi.fn(() => ({
 		start: vi.fn().mockReturnThis(),
 		succeed: vi.fn().mockReturnThis(),
-		fail: vi.fn().mockReturnThis()
+		fail: vi.fn().mockReturnThis(),
+		stop: vi.fn().mockReturnThis()
 	}))
 }));
 
@@ -35,6 +40,7 @@ vi.mock('@clack/prompts', () => ({
 	outro: vi.fn(),
 	cancel: vi.fn(),
 	isCancel: vi.fn(() => false),
+	note: vi.fn(),
 	log: {
 		info: vi.fn(),
 		warn: vi.fn(),

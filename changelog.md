@@ -28,6 +28,29 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [4.0.0](https://github.com/ahmadawais/github-stars-contributions/compare/3.0.0...4.0.0)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 REST API - Migrated from the deprecated GraphQL contributions API to the new REST contributions API <br>
+> 📦 Idempotent PUT - Added `--client-id` flag for stable, idempotent contribution updates <br>
+> 📦 List Command - Added `gsc list` to view all your contributions with pagination <br>
+> 📦 Legacy Flag - Added `--legacy-graphql` flag on `gsc add` for migration until September 1, 2026 <br>
+
+![‼️ BREAKING:](https://img.shields.io/badge/-BREAKING-gray.svg?colorB=ff6347)
+
+> ‼️ Remove Command - Removed `gsc remove` because the REST API has no delete method (use the GitHub Stars web UI instead) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Updated README with REST API usage and the new `list` command <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [3.0.0](https://github.com/ahmadawais/github-stars-contributions/compare/2.0.0...3.0.0)
 
 ![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
