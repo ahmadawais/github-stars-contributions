@@ -15,3 +15,5 @@
 - Read CLI version from package.json instead of hardcoding it in the source code. Confidence: 0.75
 - Use custom image-based section headings in README files with format [![emoji](image-url)][repo]. Confidence: 0.70
 - Running a CLI with no arguments should launch the primary/default command (e.g. interactive add flow) instead of printing help; help stays available via --help. Confidence: 0.90
+- For releases with breaking changes, always update BOTH the changelog and the README together: README gets migration guidance (usage example for the legacy/deprecated path, its removal/sunset date, and the new default), and the changelog entry must cover every change — including late follow-up fixes, not just the headline feature. Confidence: 0.85
+- Write commit subjects as emoji + uppercase type prefix (e.g. `📖 DOC: ...`, `🚀 RELEASE: ...`), with a bulleted body detailing each change. Confidence: 0.65
