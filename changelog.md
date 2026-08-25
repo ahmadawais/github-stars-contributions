@@ -35,15 +35,23 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 > 📦 REST API - Migrated from the deprecated GraphQL contributions API to the new REST contributions API <br>
 > 📦 Idempotent PUT - Added `--client-id` flag for stable, idempotent contribution updates <br>
 > 📦 List Command - Added `gsc list` to view all your contributions with pagination <br>
+> 📦 Bare `gsc` - Running the CLI with no command now starts the interactive add flow <br>
 > 📦 Legacy Flag - Added `--legacy-graphql` flag on `gsc add` for migration until September 1, 2026 <br>
+
+![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
+
+> 👌 YouTube Metadata - Fetches the full video description and normalizes dates to YYYY-MM-DD <br>
+> 👌 Description Preview - Shows the first paragraph of fetched descriptions to keep the prompt tidy <br>
+> 👌 Smaller Install - Removed legacy code and unused dependencies (bundle 528 KB → 16 KB) <br>
 
 ![‼️ BREAKING:](https://img.shields.io/badge/-BREAKING-gray.svg?colorB=ff6347)
 
 > ‼️ Remove Command - Removed `gsc remove` because the REST API has no delete method (use the GitHub Stars web UI instead) <br>
+> ‼️ Node.js 18+ - Build target bumped from Node 14 to Node 18 <br>
 
 ![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
 
-> 📖 Updated README with REST API usage and the new `list` command <br>
+> 📖 Updated README with REST API usage, the `list` command, and legacy GraphQL migration notes <br>
 
 <br>
 

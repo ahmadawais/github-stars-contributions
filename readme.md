@@ -193,7 +193,19 @@ gsc add -t SPEAKING -T "Conference Talk" -D "Talked about Node.js" -d 2025-11-20
 
 # Idempotent add/update with a stable client ID
 gsc add -t BLOGPOST -T "My Blog Post" -D "Description here" -d 2025-11-22 -c my-blog-post -x
+
+# Legacy GraphQL API (deprecated — removed September 1, 2026)
+gsc add -t BLOGPOST -T "My Blog Post" -D "Description here" -d 2025-11-22 -L -x
 ```
+
+#### 🕰️ About the Legacy GraphQL API
+
+The old GraphQL contributions API (`api-stars.github.com`) is **deprecated and will be removed by GitHub on September 1, 2026**.
+
+- v4 of this CLI uses the new **REST contributions API** by default — no flags needed.
+- If you have scripts pinned to older versions or need to double-check a migration, `gsc add -L` (`--legacy-graphql`) still talks to the legacy GraphQL API **until September 1, 2026**.
+- After that date, the flag disappears from `--help` and the CLI always uses REST — no code changes needed on your side, just keep the CLI updated.
+- `gsc remove` was removed in v4 because the REST API has no delete method. Delete contributions from the [GitHub Stars website](https://stars.github.com/) instead.
 
 ---
 
