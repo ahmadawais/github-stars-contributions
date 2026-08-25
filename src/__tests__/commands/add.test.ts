@@ -210,6 +210,36 @@ describe('add command', () => {
 		expect(clack.text).toHaveBeenCalled();
 	});
 
+	it('should show the full multiline description as a note and prefill only the first line', async () => {
+		const { fetchMetadata } = await import('../../utils/fetch-metadata.js');
+		vi.mocked(fetchMetadata).mockResolvedValue({
+			title: 'Test Title',
+			description: 'First line\nfull description body\nmore lines',
+			date: '2024-01-15'
+		});
+
+		vi.spyOn(clack, 'select').mockResolvedValue('VIDEO_PODCAST');
+		vi.spyOn(clack, 'text')
+			.mockResolvedValueOnce('https://youtu.be/laEzOCgtK6c')
+			.mockResolvedValueOnce('2024-01-15')
+			.mockResolvedValueOnce('Title')
+			.mockResolvedValueOnce('First line');
+		vi.spyOn(clack, 'confirm').mockResolvedValue(true);
+		const noteSpy = vi.spyOn(clack, 'note').mockImplementation(() => {});
+
+		const options = { interactive: true };
+
+		await add(options);
+
+		expect(noteSpy).toHaveBeenCalledWith(
+			expect.stringContaining('full description body'),
+			'Full description'
+		);
+		expect(clack.text).toHaveBeenCalledWith(
+			expect.objectContaining({ initialValue: 'First line' })
+		);
+	});
+
 	it('should handle cancellation in interactive mode', async () => {
 		vi.spyOn(clack, 'isCancel').mockReturnValue(true);
 		vi.spyOn(clack, 'select').mockResolvedValue(clack.isCancel);

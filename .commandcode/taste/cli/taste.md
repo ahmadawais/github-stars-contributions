@@ -14,3 +14,4 @@
 - Version command should output only the version number with no ASCII art, banner, or additional information. Confidence: 0.90
 - Read CLI version from package.json instead of hardcoding it in the source code. Confidence: 0.75
 - Use custom image-based section headings in README files with format [![emoji](image-url)][repo]. Confidence: 0.70
+- Running a CLI with no arguments should launch the primary/default command (e.g. interactive add flow) instead of printing help; help stays available via --help. Confidence: 0.90

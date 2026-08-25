@@ -107,9 +107,13 @@ export const add = async (options: AddOptions) => {
 
 		title = titleInput as string;
 
+		if (metadata.description) {
+			clack.note(metadata.description, 'Full description');
+		}
+
 		const descriptionInput = await clack.text({
 			message: 'Enter description',
-			initialValue: metadata.description,
+			initialValue: metadata.description.split('\n')[0],
 			validate: (value) => {
 				if (!value) return 'Description is required';
 			}
